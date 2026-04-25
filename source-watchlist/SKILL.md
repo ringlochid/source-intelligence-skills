@@ -5,11 +5,11 @@ description: Maintain lightweight Markdown watchlists for source-intelligence re
 
 # Source Watchlist
 
-Use this to keep source lists simple and human-readable. Watchlists are optional; ordinary one-off source requests can run without them.
+Use this to keep source lists simple and human-readable. Watchlists are optional; ordinary one-off source requests can run without them. Treat watchlist entries as interest hints, not required report sections; omit quiet areas rather than padding a brief.
 
 ## Purpose
 
-A watchlist is Leo/Orin's curated list of watched sources, topics, queries, accounts, repos, products, companies, papers, and markets. A `source-*` collector can use it on demand to avoid rediscovering the same source universe every time.
+A watchlist is Leo/Orin's curated list of watched sources, topics, queries, accounts, repos, products, companies, papers, markets, local events, seasonal windows, offers, and travel-decision sources. A `source-*` collector can use it on demand to avoid rediscovering the same source universe every time.
 
 It is **not** continuous monitoring by itself. It records what we care about and where to look; it does not deploy services, schedule jobs, log into accounts, scrape cookies, or post externally.
 
@@ -24,7 +24,8 @@ Live workspace watchlists live here:
 ├── product.md
 ├── market.md
 ├── social-signal.md
-└── general-topics.md
+├── general-topics.md
+└── sydney-life.md
 ```
 
 Template watchlists live inside this skill:

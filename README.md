@@ -90,4 +90,5 @@ For Orin’s live workspace, use:
 
 ```text
 /home/ubuntu/.openclaw/workspaces/orin/source-watchlists/
+# includes ai-tech, research, product, market, social-signal, general-topics, sydney-life
 ```
