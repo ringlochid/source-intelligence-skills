@@ -1,6 +1,6 @@
 # Source Intelligence Skills
 
-A compact OpenClaw skill bundle for source gathering, news/research/product intelligence, validation, brief generation, visual briefing, and Markdown-first artifacts.
+A compact OpenClaw skill bundle for source gathering, news/research/product intelligence, validation, readable brief generation, optional real visual assets, and Markdown-first artifacts.
 
 Canonical flow:
 
@@ -12,7 +12,7 @@ Optional steps:
 
 ```text
 source-watchlist       # curated recurring/custom source lists
-source-visual-read     # selected visual/PDF/page inspection when text is insufficient
+source-visual     # image-first visual read when explicitly requested or image evidence matters
 source-artifact        # Markdown-first files only when save/report/handoff is requested
 ```
 
@@ -29,7 +29,7 @@ source-artifact        # Markdown-first files only when save/report/handoff is r
 - `source-market` — finance/BTC/market sources.
 - `source-social-signal` — X/social signal only.
 - `source-briefing` — dedupe, validation, citations, confidence, and final output.
-- `source-visual-read` — selected-page/PDF/chart/table/screenshot visual inspection.
+- `source-visual` — image-first visual reads: send image(s) with a one-sentence caption by default, not text-only analysis.
 - `source-artifact` — Markdown-first source packs for report/save/handoff/archive requests.
 
 ## Rules
@@ -37,7 +37,7 @@ source-artifact        # Markdown-first files only when save/report/handoff is r
 - Use one collector for simple asks; use multiple collectors when the request spans domains or needs stronger evidence.
 - Always finish with `source-briefing` unless the user asked for raw links only.
 - Use `source-artifact` only when files are requested.
-- Use `source-visual-read` only for selected important sources where visual context matters.
+- Use `source-visual` only for selected important sources where a visual read/image evidence matters; output image(s) first, one-sentence caption second.
 - Output is English-first; Chinese/non-English sources are allowed and should be translated in the final brief unless requested otherwise.
 
 ## Effort tiers
@@ -47,7 +47,19 @@ source-artifact        # Markdown-first files only when save/report/handoff is r
 - Deep: ~50-100+ raw sources and active contradiction checks.
 - Watchlist: new/material changes only.
 
-Output labels such as quick brief, deep research, product scan, marketing plan input, business opportunity scan, competitor scan, and visual brief are examples chosen after source planning, not separate router branches.
+Output labels such as quick brief, deep research, product scan, marketing plan input, business opportunity scan, competitor scan, and optional real visual asset are examples chosen after source planning, not separate router branches.
+
+## Telegram-readable brief pattern
+
+Default chat briefs are readable text, not visual assets. Use the `source-briefing` pattern:
+
+- top synthesis callout
+- one quoted callout per important item
+- vibe-matched icons when useful
+- bullets for multi-point entries
+- blank quoted line before labelled clickable source links
+- no RED/AMBER severity labels unless the user asks for risk/incident triage
+- real image/infographic/visual-asset output only when explicitly requested
 
 ## Artifact layout
 
@@ -56,7 +68,7 @@ source-runs/YYYY-MM-DD-topic-slug/
 ├── brief.md
 ├── report-list.md
 ├── report.md              # optional
-├── visual-brief.md         # optional
+├── visual.md               # optional real visual asset prompt/spec
 ├── notes.md
 └── references/
     ├── sources.md

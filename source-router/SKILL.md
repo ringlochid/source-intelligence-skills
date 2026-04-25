@@ -1,6 +1,6 @@
 ---
 name: source-router
-description: Route source-intelligence requests by intent, effort tier, and source plan. Use for breaking news, topic monitoring, AI/tech/builder updates, research papers, GitHub/repo trends, product/marketing scans, finance/BTC/market checks, X/social signal, competitor research, business opportunity scans, and visual briefing workflows; choose 1-N source-* collectors then finish with source-briefing.
+description: Route source-intelligence requests by intent, effort tier, and source plan. Use for breaking news, topic monitoring, AI/tech/builder updates, research papers, GitHub/repo trends, product/marketing scans, finance/BTC/market checks, X/social signal, competitor research, business opportunity scans, and optional real visual asset workflows; choose 1-N source-* collectors then finish with source-briefing.
 ---
 
 # Source Router
@@ -21,7 +21,7 @@ English is the default language for skill design and final output. Chinese and o
 - **Finance/BTC/markets:** `source-market`
 - **X/social trend signal:** `source-social-signal`
 - **Final synthesis:** `source-briefing`
-- **Visual/source inspection escalation:** `source-visual-read` for selected pages/PDFs/charts/tables/screenshots when text is insufficient
+- **Image-first visual read:** `source-visual` for selected pages/PDFs/charts/tables/screenshots/news images when the user asks for visual read or image evidence matters
 - **File-backed artifacts:** `source-artifact` only when report/save/handoff/archive files are requested
 
 ## Full workflow
@@ -34,11 +34,11 @@ intent
 → dedupe
 → review / validate claims
 → brief
-→ optional visual brief
+→ optional real visual asset / image prompt
 → optional handoff / archive / watchlist update
 ```
 
-`source-router` owns intent, effort tier, and source plan. Check live workspace watchlists via `source-watchlist` when curated/recurring sources are relevant. `source-briefing` owns normalize/dedupe/review/validate/final output. Use `source-visual-read` only on selected important/unclear sources after initial dedupe. `source-artifact` only persists Markdown-first files when the user asks for report/save/handoff/archive.
+`source-router` owns intent, effort tier, and source plan. Check live workspace watchlists via `source-watchlist` when curated/recurring sources are relevant. `source-briefing` owns normalize/dedupe/review/validate/final output. Use `source-visual` only on selected important/unclear sources after initial dedupe, and only when an image-first visual read is useful or requested. `source-artifact` only persists Markdown-first files when the user asks for report/save/handoff/archive.
 
 ## Effort tiers
 
@@ -58,7 +58,7 @@ Quality beats count: high-stakes, finance, and breaking-news claims still requir
 - Competitor/marketing scan → `source-product` + `source-topic` + optional `source-social-signal`.
 - Breaking Iran/US update → `source-breaking` + optional `source-social-signal`, with social signal never used as proof.
 
-Output shapes such as quick brief, deep research, product scan, marketing plan inputs, business opportunity scan, competitor scan, and visual brief are examples selected after the source plan, not separate routes.
+Output shapes such as quick brief, deep research, product scan, marketing plan inputs, business opportunity scan, competitor scan, and optional real visual asset are examples selected after the source plan, not separate routes.
 
 ## Time awareness
 
@@ -73,6 +73,7 @@ For current, trending, market, product, or news requests, newer sources and upda
 - Breaking news needs concrete timestamps and at least two credible sources for major claims.
 - Do not deploy services, post externally, or use account cookies without explicit approval.
 - For recurring/custom topics, inspect `/home/ubuntu/.openclaw/workspaces/orin/source-watchlists/` before choosing collectors.
-- Visual requests still run through `source-briefing` first; generate editorial prompts only after facts are stable.
-- Use `source-visual-read` for the top 3-8 pages/PDFs only when visual context matters.
-- Chat-only visual briefs do not need files; use `source-artifact` only for saved visual briefs or reports.
+- Visual/image/infographic requests still run through `source-briefing` first; generate real visual assets or editorial prompts only after facts are stable and only when explicitly requested.
+- Use `source-visual` only when visual read/image evidence matters; it must produce image(s) first with a one-sentence caption by default, not a text-only section.
+- Chat-only reports should use the `source-briefing` Telegram-readable pattern; keep formatting details canonical there.
+- Do not call chat-only output a visual asset/brief. Real image/infographic/prompt/file output is optional and explicit-request only. Use `source-artifact` only for saved visual assets, prompts, or reports.

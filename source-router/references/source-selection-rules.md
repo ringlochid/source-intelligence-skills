@@ -10,7 +10,7 @@ intent
 → source plan
 → 1-N source-* collectors
 → source-briefing
-→ optional source-visual-read
+→ optional source-visual
 → optional source-artifact
 ```
 
@@ -40,7 +40,7 @@ Prioritize:
 Pair with:
 - `source-social-signal` only for early leads/sentiment
 - `source-market` for market-moving claims
-- `source-visual-read` for charts, maps, official PDFs, or visual evidence
+- `source-visual` for charts, maps, official PDFs, or visual evidence
 
 ### `source-topic`
 
@@ -83,7 +83,7 @@ Prioritize:
 Pair with:
 - `source-github` for code adoption
 - `source-tech` for practitioner impact
-- `source-visual-read` for figures/tables/PDFs when text extraction is insufficient
+- `source-visual` for figures/tables/PDFs when text extraction is insufficient
 
 ### `source-github`
 
@@ -111,7 +111,7 @@ Prioritize:
 Pair with:
 - `source-tech` for builder/product categories
 - `source-social-signal` for weak sentiment
-- `source-visual-read` when page layout or screenshots matter
+- `source-visual` when page layout or screenshots matter
 
 ### `source-market`
 
@@ -133,7 +133,7 @@ Use only for weak signals: early trend detection, creator/builder reactions, sen
 
 Never use social as sole evidence for factual claims. Avoid cookies, posting, or scraping at scale unless explicitly approved.
 
-### `source-visual-read`
+### `source-visual`
 
 Use after initial collection/dedupe for selected important or unclear sources.
 
@@ -142,13 +142,14 @@ Use when:
 - screenshots or visual evidence need inspection
 - product/GitHub/research pages need layout context
 - PDF text extraction is weak
-- visual brief accuracy depends on page/figure details
+- real visual asset accuracy depends on page/figure details
+- visual read must output image(s) first with a one-sentence caption, not a text-only section
 
 Usually inspect only the top 3-8 sources.
 
 ### `source-artifact`
 
-Use only when the user asks to save/create/write a report, research pack, source pack, visual brief file, handoff, archive, or watchlist update.
+Use only when the user asks to save/create/write a report, research pack, source pack, real visual asset prompt/spec file, handoff, archive, or watchlist update.
 
 Sample artifact structures should be shown as a tree only unless the user explicitly asks to create/write files.
 

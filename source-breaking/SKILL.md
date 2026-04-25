@@ -30,6 +30,6 @@ Use current web/search first, then prefer primary sources. Useful starting point
 2. Open/fetch the best primary or reputable sources.
 3. Record publication/update time and retrieval time.
 4. Cross-check major claims with at least two credible sources, or mark as unverified.
-5. Send normalized source notes to `source-briefing`.
+5. Send normalized source notes to `source-briefing`; for chat reports, use its Telegram-readable pattern and do not call the output a visual asset/brief.
 
 Avoid social-only claims, screenshots without source links, repost chains, and low-quality aggregators.

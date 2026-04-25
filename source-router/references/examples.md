@@ -32,16 +32,23 @@ source-breaking
 
 ```markdown
 **Brief — <company> sanctions** · <retrieval time>
-Verdict: <one-line answer>
 
-1. **<finding>** — <impact>. 〔Official/reputable · high〕
-2. **<finding>** — <market context>. 〔Market data · med-high〕
-3. **<finding>** — <uncertainty>. 〔Mixed sources · med〕
+> 🎯 **Best-fit theme:** <one-line answer>.
+
+> **<icon> <finding>**
+> - <impact>
+> - <market/company context>
+>
+> - Source: [<label>](<url>) · high
+
+> **<icon> <uncertainty>**
+> - <what is still unclear>
+>
+> - Source: [<label>](<url>) · med
 
 **Watch**
 - <official next step>
 - <market/company next check>
-- <supply-chain caveat>
 ```
 
 ---
@@ -68,7 +75,7 @@ source-research
 - `source-research`: arXiv + Semantic Scholar/OpenAlex-style metadata + OpenReview/conference pages + Papers with Code.
 - `source-github`: code release/adoption signal.
 - `source-tech`: HN/blog discussion as practitioner signal.
-- `source-visual-read`: only for selected papers with important figures/tables.
+- `source-visual`: only for selected papers with important figures/tables.
 
 **Dedupe logic:** Cluster by problem, method, benchmark, dataset, lab, and codebase rather than listing every paper separately.
 
@@ -76,11 +83,18 @@ source-research
 
 ```markdown
 **Research Signals — AI Agents** · <retrieval time>
-Verdict: evaluation and tool-use reliability are the strongest clusters.
 
-1. **Agent evaluation is getting more diagnostic** — papers focus on failure modes, not just scores. 〔arXiv+metadata · med〕
-2. **Code/tool-use benchmarks are converging** — repo activity suggests practical adoption. 〔GitHub+PWC · med〕
-3. **Web-agent planning remains brittle** — multiple papers flag long-horizon weakness. 〔arXiv · med〕
+> 🎯 **Best-fit theme:** evaluation and tool-use reliability are the strongest clusters.
+
+> **<icon> Agent evaluation is getting more diagnostic**
+> - Papers focus on failure modes, not just scores.
+>
+> - Source: [arXiv](<url>) · med
+
+> **<icon> Code/tool-use benchmarks are converging**
+> - Repo activity suggests practical adoption.
+>
+> - Sources: [GitHub](<url>), [Papers with Code](<url>) · med
 
 **Watch**
 - Replication/code availability.
@@ -120,11 +134,18 @@ source-product
 
 ```markdown
 **Opportunity Scan — AI Coding Tools** · <retrieval time>
-Verdict: model choice, workflow integration, and enterprise controls are the strongest positioning angles.
 
-1. **BYOK/local models are becoming a buying criterion** — useful for privacy and cost positioning. 〔GitHub+official · high〕
-2. **Jira/issue workflow integration is a clearer painkiller than generic chat** — team workflow fit matters. 〔Official+HN · med-high〕
-3. **Launch hype is noisy** — Product Hunt attention needs retention or usage proof. 〔PH+site · med〕
+> 🎯 **Best-fit theme:** model choice, workflow integration, and enterprise controls are the strongest positioning angles.
+
+> **<icon> BYOK/local models are becoming a buying criterion**
+> - Useful for privacy and cost positioning.
+>
+> - Sources: [GitHub](<url>), [official](<url>) · high
+
+> **<icon> Launch hype is noisy**
+> - Product Hunt attention needs retention or usage proof.
+>
+> - Sources: [Product Hunt](<url>), [site](<url>) · med
 
 **Use in report**
 - **Angle:** developer-control and workflow-native agents.
@@ -134,27 +155,27 @@ Verdict: model choice, workflow integration, and enterprise controls are the str
 
 ---
 
-## Example 4 — Visual brief in chat
+## Example 4 — Real visual asset prompt
 
 **User ask:**
 
-> Make a visual brief for today’s biggest AI infrastructure story.
+> Make an infographic prompt/image brief for today’s biggest AI infrastructure story.
 
 **Route:**
 
 ```text
 source-tech
 + source-market if funding/compute is material
-+ source-visual-read if charts/pages matter
++ source-visual if charts/pages matter
 → source-briefing
 ```
 
-No files unless the user asks to save/report/handoff.
+No files unless the user asks to save/report/handoff. If they ask to send a real image, generate/send the image after facts are stable.
 
 **Output shape:**
 
 ```markdown
-**Visual Brief — AI Infrastructure** · <retrieval time>
+**Image Brief — AI Infrastructure** · <retrieval time>
 
 **Factual basis**
 1. <verified point>. 〔Official · high〕
@@ -165,6 +186,13 @@ No files unless the user asks to save/report/handoff.
 **Layout:** title, retrieval date, 3-5 panels, source-confidence strip
 **Prompt:** <safe GPT-image prompt>
 **Do not include:** fake screenshots, fake news photos, fabricated quotes, unverified claims
+```
+
+If the user asks for `source-visual` instead of an image prompt, send image(s) first:
+
+```markdown
+MEDIA:<image-path-or-url>
+**Visual:** <one-sentence caption>.
 ```
 
 ---
@@ -192,7 +220,7 @@ source-runs/YYYY-MM-DD-ai-agent-trends/
 ├── brief.md
 ├── report-list.md
 ├── report.md              # optional
-├── visual-brief.md         # optional
+├── visual.md               # optional real visual asset prompt/spec
 ├── notes.md
 └── references/
     ├── sources.md

@@ -1,6 +1,6 @@
 ---
 name: source-artifact
-description: Create Markdown-first source-run artifact folders for reports, research packs, product/marketing/business plans, saved source packs, visual briefs, handoff, or archive/watchlist outputs. Use only when the user asks to save, create files, prepare a report/artifact, or preserve references; chat-only briefs do not need this skill.
+description: Create Markdown-first source-run artifact folders for reports, research packs, product/marketing/business plans, saved source packs, real visual asset prompts/specs, handoff, or archive/watchlist outputs. Use only when the user asks to save, create files, prepare a report/artifact, or preserve references; chat-only briefs do not need this skill.
 ---
 
 # Source Artifact
@@ -17,14 +17,14 @@ Use when the request says or implies:
 - prepare a research artifact/source pack
 - save the sources
 - create a product/marketing/business plan with references
-- make a visual brief as a file
+- make a real visual asset prompt/spec as a file
 - hand this off
 - archive/preserve/watchlist update
 
 Do not use for:
 
 - quick chat answers
-- visual brief shown only in chat
+- chat-only readable brief
 - raw “what’s happening?” updates
 
 ## Default folder
@@ -36,7 +36,7 @@ source-runs/YYYY-MM-DD-topic-slug/
 ├── brief.md
 ├── report-list.md          # short finding list for reports/slides
 ├── report.md               # optional, if asked
-├── visual-brief.md          # optional, if asked
+├── visual.md                # optional real visual asset prompt/spec, if asked
 ├── notes.md
 └── references/
     ├── sources.md
@@ -57,9 +57,9 @@ Default to Markdown files. Do not create JSON/JSONL unless:
 ## File roles
 
 - `brief.md` — concise final brief.
-- `report-list.md` — short structured list of findings for reports/slides, using the same compact structure as visual briefs.
+- `report-list.md` — short structured list of findings for reports/slides, using the same compact readable structure as chat briefs.
 - `report.md` — longer report/plan if requested.
-- `visual-brief.md` — factual basis + visual type/layout + safe image prompt.
+- `visual.md` — factual basis + visual type/layout + safe image prompt/spec for a real visual asset.
 - `notes.md` — caveats, contradictions, decisions, next checks, method notes.
 - `references/sources.md` — grouped source list with annotations and timestamps.
 - `references/citation-map.md` — final claims/findings mapped to supporting sources.
