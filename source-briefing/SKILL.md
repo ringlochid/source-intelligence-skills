@@ -28,6 +28,10 @@ Dedupe/review/validation happens in memory for both chat and file outputs.
 - **Artifact/report/save/handoff:** after review, call `source-artifact` to persist a Markdown-first source pack.
 - **Automation/export:** create JSON/JSONL only if explicitly requested.
 
+## Time-aware ranking
+
+For current/trending/news-style requests, rank newer confirmed developments above older context. Keep older sources only when they explain background, contradictions, or trend history. Always show or preserve publish/update/retrieval times when they affect confidence.
+
 ## Required checks before output
 
 1. **Normalize** source notes: title, source, URL, publish/update time, retrieved time, author/org, key claims, source type, and source language when relevant.

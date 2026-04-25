@@ -60,6 +60,10 @@ Quality beats count: high-stakes, finance, and breaking-news claims still requir
 
 Output shapes such as quick brief, deep research, product scan, marketing plan inputs, business opportunity scan, competitor scan, and visual brief are examples selected after the source plan, not separate routes.
 
+## Time awareness
+
+For current, trending, market, product, or news requests, newer sources and updates outrank older material by default. Use older sources as background only unless the user asks for historical analysis. Always preserve concrete publish/update/retrieval times when available.
+
 ## Hard rules
 
 - Prefer primary/current sources over social or aggregators.

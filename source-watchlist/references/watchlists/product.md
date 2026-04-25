@@ -7,6 +7,8 @@ Add product launch sources, competitor pages, pricing pages, changelogs, and pos
 - **Type:** product
 - **URL/query:** https://www.producthunt.com/topics/artificial-intelligence
 - **Priority:** medium
+- **Last checked:** unknown
+- **Freshness:** weekly
 - **Use for:** product discovery and launch positioning
 - **Notes:** attention signal only; verify on official product pages
 
@@ -15,5 +17,7 @@ Add product launch sources, competitor pages, pricing pages, changelogs, and pos
 - **Type:** repo
 - **URL/query:** https://github.com/trending
 - **Priority:** medium
+- **Last checked:** unknown
+- **Freshness:** weekly
 - **Use for:** builder/product opportunity signals
 - **Notes:** stars/trending are attention, not quality

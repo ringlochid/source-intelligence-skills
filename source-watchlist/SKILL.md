@@ -9,9 +9,9 @@ Use this to keep source lists simple and human-readable. Watchlists are optional
 
 ## Purpose
 
-A watchlist is a curated list of sources or queries that a `source-*` collector can use on demand.
+A watchlist is Leo/Orin's curated list of watched sources, topics, queries, accounts, repos, products, companies, papers, and markets. A `source-*` collector can use it on demand to avoid rediscovering the same source universe every time.
 
-It is **not** continuous monitoring by itself. It does not deploy services, schedule jobs, log into accounts, scrape cookies, or post externally.
+It is **not** continuous monitoring by itself. It records what we care about and where to look; it does not deploy services, schedule jobs, log into accounts, scrape cookies, or post externally.
 
 ## Locations
 
@@ -46,8 +46,26 @@ Create or update only the relevant live file. Keep entries short.
 - **URL/query:** <url or query>
 - **Priority:** high | medium | low
 - **Use for:** <topics/intents>
+- **Last checked:** <YYYY-MM-DD or unknown>
+- **Freshness:** live | daily | weekly | monthly | historical
 - **Notes:** <constraints, caveats, language, verification rules>
 ```
+
+## Time awareness
+
+Watchlists are time-aware. For current/news/trending asks, newer sources and newer updates should rank ahead of older material unless the user asks for historical context.
+
+Use these fields when maintaining entries:
+
+- **Last checked:** last time this source/query was reviewed, or `unknown`.
+- **Freshness:** expected update cadence: `live`, `daily`, `weekly`, `monthly`, or `historical`.
+
+When reading a watchlist:
+
+1. Prefer high-priority sources first.
+2. Within the same priority, prefer sources with recent publish/update times.
+3. For stale `Last checked` values, refresh before relying on old notes.
+4. For historical/background tasks, keep older sources but label them as context.
 
 ## Language policy
 

@@ -7,5 +7,7 @@ Add public accounts, tweet/status URLs, communities, or discussion searches. Soc
 - **Type:** social
 - **URL/query:** <public account, tweet URL, or search term>
 - **Priority:** low
+- **Last checked:** unknown
+- **Freshness:** weekly
 - **Use for:** early trend/sentiment discovery
 - **Notes:** no cookies, no login scraping, no posting; verify claims elsewhere
