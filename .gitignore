@@ -1,0 +1,10 @@
+# Generated artifacts
+source-runs/
+*.tmp
+*.bak
+.DS_Store
+
+# Local editor/runtime noise
+.vscode/
+__pycache__/
+*.pyc
