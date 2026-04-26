@@ -1,33 +1,35 @@
 ---
 name: source-topic
-description: Gather topic sources from RSS, blogs, newsletters, feeds, and monitored pages. Use for ongoing topic tracking, digest inputs, niche source lists, and general source collection. Route to source-briefing.
+description: Gather topic sources from RSS, blogs, newsletters, feeds, monitored pages, and watchlists.
 ---
 
 # Source Topic
 
-Use for topic monitoring and feed-style source gathering.
+Use for topic monitoring, feeds, newsletters, blogs, source lists, and recurring digests.
 
-## Source pattern
+Read first:
+- `../source-common/references/safety-boundaries.md`
+- `../source-common/references/source-quality-ladder.md`
+- `../source-common/references/research-contract.md`
+- `../source-common/references/stop-rules.md`
+- `../source-common/references/citation-and-timestamp-rules.md`
+- `../source-common/references/watchlist-state-rules.md`
 
-Prefer RSSHub/RSS-Bridge style feed expansion and Miniflux/FreshRSS/Folo-style feed state if configured. If not configured, use direct RSS/web fetch and keep the run stateless.
+Source hints: use RSS/blog/newsletter pages first; RSSHub/RSS-Bridge/changedetection-style expansion requires configured/approved tooling.
 
+Workflow:
+1. Identify topic, entities, source list, and time window.
+2. If curated/recurring, read relevant watchlist through `source-watchlist`.
+3. Fetch recent feed/source items.
+4. Preserve title, URL, source, published/retrieved time, excerpt, and tags.
+5. Drop obvious duplicates/stale items before briefing.
+6. Send notes to `source-briefing` unless the user asked for raw links only.
 
-## Reference links
-
-Use these as feed/source infrastructure references, not mandatory dependencies:
-
-- RSSHub: https://github.com/DIYgod/RSSHub
-- RSS-Bridge: https://github.com/RSS-Bridge/rss-bridge
-- Miniflux: https://miniflux.app/docs/
-- FreshRSS: https://freshrss.github.io/FreshRSS/
-- changedetection.io: https://github.com/dgtlmoon/changedetection.io
-
-## Workflow
-
-1. Identify topic, entities, and watchlist/source list if provided. If the request is recurring or curated, read live workspace watchlists through `source-watchlist` first.
-2. Fetch recent feed items or source pages.
-3. Keep title, URL, source, published time, retrieved time, excerpt, and topic tags.
-4. Drop obvious duplicates and stale items before briefing.
-5. Send source notes to `source-briefing`.
-
-For high-stakes claims, verify against primary/reputable sources before finalizing.
+Output:
+- topic scope
+- sources checked
+- normalized source notes
+- stale/missing sources
+- next briefing lane
+- missing evidence
+- citation/source link

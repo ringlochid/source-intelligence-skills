@@ -1,33 +1,32 @@
 ---
 name: source-market
-description: Gather finance, stock, BTC, crypto, company, and market sources. Use finance/Finnhub-style data plus independent price/data verification; route to source-briefing with risk labels.
+description: Gather finance, BTC, crypto, company, and market sources with separate data verification before briefing.
 ---
 
 # Source Market
 
-Use for finance, BTC, crypto, companies, tickers, and market-moving sources.
+Use for finance, BTC/crypto, tickers, funding, earnings, market-moving news, and regulatory market claims.
 
-## Source pattern
+Read first:
+- `../source-common/references/research-contract.md`
+- `../source-common/references/stop-rules.md`
+- `../source-common/references/source-quality-ladder.md`
+- `../source-common/references/citation-and-timestamp-rules.md`
+- `../source-common/references/safety-boundaries.md`
 
-Use finance-data/Finnhub-style sources plus built-in finance price checks where available. For primary facts, prefer company IR, filings, exchange/regulator statements, official project posts, and reputable finance wires.
+Source hints: preserve market session/timezone context for price or market-moving claims.
 
+Workflow:
+1. Identify ticker/coin/company/entity and time window.
+2. Verify price/market data separately from commentary.
+3. Collect filings, IR, regulator/exchange statements, reputable reporting, and context.
+4. Separate data, reported news, analysis, and social interpretation.
+5. Send notes to `source-briefing`.
 
-## Reference links
-
-Use market/news sources as context, but verify price/data separately:
-
-- Finnhub API docs: https://finnhub.io/docs/api
-- SEC EDGAR search: https://www.sec.gov/edgar/search/
-- Yahoo Finance: https://finance.yahoo.com/
-- CoinGecko API docs: https://docs.coingecko.com/reference/introduction
-- CoinMarketCap API docs: https://coinmarketcap.com/api/documentation/v1/
-
-## Workflow
-
-1. Identify ticker/coin/entity and time window.
-2. Verify current price/market data separately from commentary.
-3. Collect filings/statements/news/context.
-4. Separate market data, reported news, and analyst/social interpretation.
-5. Send source notes to `source-briefing`.
-
-Do not present investment advice. Use confidence/risk labels and concrete timestamps.
+Output:
+- market scope
+- market data checked
+- source notes
+- confidence/caveats
+- missing evidence
+- citation/source link

@@ -1,63 +1,29 @@
 ---
 name: source-visual
-description: Produce image-first visual reads for selected source pages, PDFs, charts, tables, product pages, GitHub pages, research pages, or visual evidence. Use only when the user asks for a visual read or when image evidence matters; output must be image(s) first with a one-sentence caption by default, not text-only notes.
+description: Produce image-first visual reads only when visual evidence or visual output matters.
 ---
 
 # Source Visual
 
-A visual read is **image-first**. It means selecting/capturing/sending one or more relevant images, then adding a one-sentence caption by default. It is not a text-only analysis section.
+Use this as an escalation skill after initial source collection/dedupe: inspect visuals for evidence when needed, or produce final visual output only when requested.
 
-Use this as an escalation skill, not a default collector.
+Read first:
+- `../source-common/references/research-contract.md`
+- `../source-common/references/visual-evidence-rules.md`
+- `../source-common/references/safety-boundaries.md`
 
-## When to use
+Workflow:
+1. Confirm visual evidence or visual output is actually needed.
+2. Pick the top important/unclear sources, usually 1-3 for chat and up to 3-8 for deeper work.
+3. Capture or select relevant screenshot/chart/table/figure/public image.
+4. Deliver image(s) first when producing a visual read.
+5. Add a one-sentence caption with source/context/caveat.
+6. If only text is possible, route back to `source-briefing` instead of pretending it is visual.
 
-Use visual read when:
-
-- page layout, screenshots, charts, tables, or figures matter
-- text extraction/web fetch is sparse or misleading
-- PDF extraction is weak, scanned, table-heavy, or figure-heavy
-- Product Hunt/GitHub/research pages need visual context
-- the user explicitly asks for a visual read
-- a real visual asset/image prompt needs accurate layout or figure context
-- there is a claim based on an image/screenshot/chart that needs inspection
-- breaking news has a meaningful public image/map/chart/photo worth showing
-
-Do not use for every source. It is slower and noisier than text/source metadata. If no meaningful image exists, say so briefly instead of creating a text-only visual read.
-
-
-## Reference links
-
-Use visual read only when image/visual context is needed; for ordinary text extraction, use normal source collectors instead:
-
-- Playwright screenshots/docs: https://playwright.dev/docs/screenshots
-- arXiv PDF help: https://info.arxiv.org/help/submit_pdf.html
-- GitHub rendered Markdown: https://docs.github.com/en/get-started/writing-on-github
-- Product Hunt: https://www.producthunt.com/
-
-## Workflow
-
-1. Run source collection and dedupe first.
-2. Pick the top 3-8 important/unclear sources.
-3. Open with browser or screenshot/vision as needed.
-4. Capture/select the relevant image(s) first: screenshot, chart crop, article image, public map, figure, or generated editorial image when explicitly appropriate.
-5. Send/deliver the image(s) before or with the one-sentence caption.
-6. Caption should be one sentence by default: what it shows plus source/context or caveat only if essential.
-7. Do not return a text-only visual read. If only text is possible, route back to normal `source-briefing` instead.
-
-## Output shape
-
-Preferred chat shape:
-
-```markdown
-MEDIA:<image-path-or-url>
-**Visual:** <one-sentence caption>.
-```
-
-For multiple images, send the strongest 1-3 images unless the user asks for a gallery.
-
-## Safety
-
-- Do not treat screenshots/images as factual proof unless source/provenance is credible.
-- Do not fabricate details from partial screenshots.
-- For news visuals, use real/public/source images when available. If generating an editorial image, clearly label it as generated/editorial and do not present it as evidence.
-- For PDFs, prefer local text extraction first; use visual read when local extraction misses important figures/tables.
+Output:
+- image/media first when available
+- one-sentence caption
+- source/provenance
+- missing visual proof if blocked
+- citation/provenance
+- missing evidence if blocked

@@ -1,33 +1,30 @@
 ---
 name: source-product
-description: Gather product, launch, marketing, competitor, and business opportunity sources. Use Product Hunt-style discovery plus official product pages/changelogs/pricing/docs for verification. Route to source-briefing.
+description: Gather product, launch, marketing, competitor, and business opportunity sources. Use official product pages, changelogs, pricing/docs, Product Hunt-style discovery, and company/founder posts with verification. Route normalized notes to source-briefing.
 ---
 
 # Source Product
 
-Use for product launches, marketing inspiration, competitor scans, product ideas, positioning, and business opportunity scans.
+Use for product launches, competitor scans, marketing inspiration, positioning, pricing/package changes, and business opportunity scans.
 
-## Source pattern
+Read first:
+- `../source-common/references/safety-boundaries.md`
+- `../source-common/references/research-contract.md`
+- `../source-common/references/stop-rules.md`
+- `../source-common/references/source-quality-ladder.md`
+- `../source-common/references/citation-and-timestamp-rules.md`
 
-Use Product Hunt for discovery, then verify with official website, changelog, docs, pricing page, GitHub repo, founder/company post, or customer-facing materials.
-
-
-## Reference links
-
-Use launch directories for discovery, then verify on official product pages:
-
-- Product Hunt: https://www.producthunt.com/
-- Product Hunt API docs: https://api.producthunt.com/v2/docs
-- GitHub Trending: https://github.com/trending
-- HN Algolia Search API: https://hn.algolia.com/api
-- changedetection.io: https://github.com/dgtlmoon/changedetection.io
-
-## Workflow
-
-1. Gather product/launch/competitor candidates.
+Workflow:
+1. Gather candidates from official pages, launch sites, changelogs, pricing/docs, and discovery sources.
 2. Verify each candidate against official pages, not just launch copy.
-3. Preserve product name, URL, tagline, launch date, source, pricing/status if relevant, and evidence of traction.
+3. Preserve product, URL, tagline, launch/update date, pricing/status, and traction signal.
 4. Distinguish attention from validation.
-5. Send source notes to `source-briefing`.
+5. Send notes to `source-briefing`.
 
-Best paired with `source-tech` for builder/product opportunities or `source-social-signal` for weak sentiment signals.
+Output:
+- product/category scope
+- verified product notes
+- positioning/traction signals
+- caveats/competitors
+- missing evidence
+- citation/source link

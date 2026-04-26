@@ -1,31 +1,30 @@
 ---
 name: source-github
-description: Gather GitHub/repo trends, releases, libraries, and builder signals. Use GitHub search/API/trending-style discovery; verify with repo metadata, releases, commits, issues, and docs. Route to source-briefing.
+description: Gather GitHub/repo trends, releases, libraries, and builder signals. Use GitHub search, repos, releases, issues, commits, docs, and GitHub official sources. Route normalized notes to source-briefing.
 ---
 
 # Source GitHub
 
-Use for repo trends, new libraries, releases, and builder signals.
+Use for repos, releases, developer tools, libraries, GitHub trends, and GitHub platform changes.
 
-## Source pattern
+Read first:
+- `../source-common/references/safety-boundaries.md`
+- `../source-common/references/research-contract.md`
+- `../source-common/references/stop-rules.md`
+- `../source-common/references/source-quality-ladder.md`
+- `../source-common/references/citation-and-timestamp-rules.md`
 
-Use GitHub API/search and repository pages. For GitHub product/platform changes, GitHub Changelog and official GitHub Blog pages count as primary sources.
-
-
-## Reference links
-
-Use GitHub official pages as primary sources for GitHub/repo facts:
-
-- GitHub REST API: https://docs.github.com/en/rest
-- GitHub Search API: https://docs.github.com/en/rest/search/search
-- GitHub Releases API: https://docs.github.com/en/rest/releases/releases
-- GitHub Changelog: https://github.blog/changelog/
-- GitHub Blog: https://github.blog/
-
-## Workflow
-
+Workflow:
 1. Search repos/releases/issues by topic, language, date, or entity.
-2. Preserve repo full name, URL, stars/forks if available, latest release/date, license, and activity signals.
-3. Prefer release notes, README, docs, source, GitHub Changelog, and official GitHub Blog over third-party summaries.
+2. Preserve repo full name, URL, license, activity, latest release/date, and maintainer signals.
+3. Prefer README/docs/releases/issues/commits and GitHub Blog/Changelog over third-party summaries.
 4. Treat stars/trending as attention, not quality.
-5. Send source notes to `source-briefing`.
+5. Send notes to `source-briefing`.
+
+Output:
+- repo/topic scope
+- repo/source notes
+- release/activity signals
+- quality caveats
+- missing evidence
+- citation/source link

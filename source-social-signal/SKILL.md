@@ -1,32 +1,31 @@
 ---
 name: source-social-signal
-description: Gather weak social/X/Twitter signal for trends, leads, sentiment, creator/builder reactions, and early discovery only. Never treat social as sole factual evidence. Route to source-briefing for verification.
+description: Gather weak social/X/Twitter/community signal for trends, leads, sentiment, and creator/builder reactions only. Never treat social as sole factual evidence. Route normalized signal notes to source-briefing.
 ---
 
 # Source Social Signal
 
-Use only when social/X signal is specifically useful: early trend detection, sentiment, creator/builder reactions, or leads to verify elsewhere.
+Use for early leads, sentiment, creator/builder reactions, and community discussion signal.
 
-## Source pattern
+Read first:
+- `../source-common/references/research-contract.md`
+- `../source-common/references/stop-rules.md`
+- `../source-common/references/source-quality-ladder.md`
+- `../source-common/references/citation-and-timestamp-rules.md`
+- `../source-common/references/safety-boundaries.md`
 
-Use read-only Twitter/X reader patterns for public URLs, explicit accounts, or search terms.
-
-Do not use account cookies, posting, scraping at scale, or tools that send directly to messaging platforms without explicit approval.
-
-
-## Reference links
-
-Use social sources as weak signal only. Prefer read-only public URLs and avoid cookies/posting/scraping at scale:
-
-- FxTwitter API pattern: https://api.fxtwitter.com/
-- X developer docs: https://docs.x.com/
-- HN Algolia Search API: https://hn.algolia.com/api
-- GitHub discussions/search: https://docs.github.com/en/search-github
-
-## Workflow
-
-1. Collect public social items relevant to the request. If a curated social list exists, read `/home/ubuntu/.openclaw/workspaces/orin/source-watchlists/social-signal.md` through `source-watchlist` first.
-2. Preserve URL/status ID, author/account, timestamp, and quoted claim.
+Workflow:
+1. Use public social/community sources only.
+2. Preserve URL/status ID, author/account, timestamp, quoted claim, and engagement signal when useful.
 3. Label as signal, not proof.
-4. Verify factual claims through another `source-*` skill or primary source before final briefing.
-5. Send source notes to `source-briefing`.
+4. Verify factual claims through primary or stronger source lanes before final briefing.
+5. Send signal notes to `source-briefing`.
+
+Output:
+- social scope
+- signal notes
+- claims needing verification
+- sentiment/adoption read
+- missing stronger evidence
+- missing evidence
+- citation/source link
