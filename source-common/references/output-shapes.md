@@ -13,6 +13,7 @@
 
 - answer/verdict first
 - 3-8 evidence-backed findings by default
+- for Telegram/scheduled briefs, use card-style blockquotes from the chat brief style ref
 - citations inline as labelled links
 - confidence/source chips when useful
 - missing evidence / uncertainty

@@ -23,6 +23,10 @@ This is the mandatory spine for source-gathering skills.
 
 Quality beats count. Do not pad a brief with weak sources when primary sources answer the question.
 
+## Scheduled/chat brief rule
+
+Collectors gather notes; they do not final-render scheduled/chat briefs. For any cron-style, Telegram-readable, daily/weekly scan, or named recurring brief, hand normalized notes to `source-briefing` and use `chat-brief-style.md` card structure. Do not output a flat bullet wall from a collector.
+
 ## Stop conditions
 
 Stop or mark blocked when:

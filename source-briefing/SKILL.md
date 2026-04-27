@@ -22,12 +22,13 @@ Workflow:
 3. Rank source quality and reject weak/slop sources when needed.
 4. Cross-check high-risk or disputed claims.
 5. Separate facts, reported claims, signals, and inference.
-6. Produce the smallest useful cited brief.
-7. Route to `source-artifact` only if files are requested; route to `source-visual` only when visual evidence/output is requested or materially useful.
+6. For Telegram/scheduled briefs, use the chat brief style ref: title, quoted theme, quoted cards; every line in a card starts with `>`.
+7. Produce the smallest useful cited brief.
+8. Route to `source-artifact` only if files are requested; route to `source-visual` only when visual evidence/output is requested or materially useful.
 
 Output:
 - answer/verdict first
-- evidence-backed findings
+- card-style evidence-backed findings for chat/scheduled briefs
 - citations/timestamps
 - confidence/caveats
 - missing evidence
