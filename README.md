@@ -1,58 +1,75 @@
 # Source Intelligence Skills
 
-Karpathy-style source gathering, validation, briefing, visual, watchlist, and artifact skills.
+Source Intelligence Skills is an OpenClaw skill bundle for turning messy research requests into scoped, cited, confidence-aware briefs.
 
-Canonical flow:
+It is built for questions where freshness and source quality matter: current events, product and market scans, technical releases, research papers, GitHub activity, social signal, watchlists, and handoff-ready source packs.
 
-```text
-source-router → source plan → 1-N source-* collectors → source-briefing
-```
+## What it can do
 
-Optional steps:
+- Route a broad research request into the right source lane and effort level.
+- Gather evidence from web, official docs, papers, GitHub, market data, product pages, and monitored sources.
+- Separate verified facts from weak signal, speculation, and missing evidence.
+- Produce concise briefs with citations, timestamps, caveats, and confidence.
+- Save Markdown source packs when a report, archive, or handoff is requested.
 
-```text
-source-watchlist  # curated recurring/custom source lists
-source-visual     # image-first visual read when visual evidence matters
-source-artifact   # Markdown-first files when save/report/handoff is requested
-```
-
-## Public skills
-
-- `source-router` — route intent, effort tier, and source plan.
-- `source-topic` — topic/RSS/feed-style monitoring.
-- `source-breaking` — breaking/current events.
-- `source-tech` — AI/tech/builder ecosystem.
-- `source-research` — papers and trending research scans.
-- `source-github` — GitHub/repo/release trends.
-- `source-product` — product/marketing/business/competitor scans.
-- `source-market` — finance/BTC/market sources.
-- `source-social-signal` — weak social/community signal only.
-- `source-watchlist` — lightweight Markdown watchlists for recurring/custom sources.
-- `source-briefing` — dedupe, validation, citations, confidence, and final output.
-- `source-visual` — image-first visual reads.
-- `source-artifact` — Markdown-first source packs for report/save/handoff/archive requests.
-
-`source-common/` is shared support only and intentionally has no `SKILL.md`.
-
-## Workflow lock
-
-Every source skill follows:
+## Core workflow
 
 ```text
-question → scope → source plan → gather → quality-rank → cross-check → cite → stop
+question
+  → scope and source plan
+  → one or more source collectors
+  → quality ranking and cross-checks
+  → source-briefing
+  → cited answer or artifact
 ```
 
-Rules:
+The default is intentionally conservative: gather enough evidence to answer well, then stop. Social/community sources are useful for leads and sentiment, but they are not treated as proof until verified elsewhere.
 
-- Use one collector for simple asks; use multiple only when the request spans domains or needs stronger evidence.
-- Always finish with `source-briefing` unless the user asked for raw links only.
-- Use `source-artifact` only when files are requested.
-- Use `source-visual` only when visual evidence/output matters.
-- Social/community sources are weak signal until verified elsewhere.
-- Output is English-first unless the user asks otherwise.
+## Skills map
 
-Validate:
+| Need | Skill |
+|---|---|
+| Decide the right source path | `source-router` |
+| Topic, RSS, blogs, newsletters, watch pages | `source-topic` |
+| Breaking/current events | `source-breaking` |
+| AI, tech, startup, builder ecosystem | `source-tech` |
+| Papers and literature scans | `source-research` |
+| GitHub repos, releases, issues, libraries | `source-github` |
+| Product, launch, pricing, competitor scans | `source-product` |
+| Finance, BTC, crypto, market/company sources | `source-market` |
+| Weak social/community signal | `source-social-signal` |
+| Recurring monitored source lists | `source-watchlist` |
+| Final synthesis with citations and confidence | `source-briefing` |
+| Image-first visual evidence reads | `source-visual` |
+| Saved Markdown source packs | `source-artifact` |
+
+`source-common/` contains shared references and validation logic. It is not an installable skill.
+
+## Design philosophy
+
+- **Source quality before volume.** A smaller set of better sources beats a pile of links.
+- **Primary sources first.** Official docs, filings, papers, repos, and direct announcements are preferred when available.
+- **Freshness is explicit.** Current or unstable claims should carry dates and caveats.
+- **Signals are labeled.** Social traction, rumors, and community chatter stay clearly separated from verified facts.
+- **Artifacts are deliberate.** Files are created only when the user asks for a saved report, source pack, archive, or handoff.
+
+## Example requests
+
+- “Find the strongest sources on the latest OpenAI API changes and summarize what changed.”
+- “Track these five AI repos and brief me on meaningful releases every week.”
+- “Research competitors for a lightweight student planning app; cite pricing, positioning, and launch notes.”
+- “Turn this research into a Markdown source pack I can hand to another agent.”
+
+## Validation
+
+Run from the bundle root:
 
 ```bash
 python3 source-common/scripts/validate_source_bundle.py
 ```
+
+Expected shape: 13 public skills plus `source-common/` shared support.
+
+## Installation notes
+
+Copy the public skill directories plus `source-common/` into the active OpenClaw skills path. Do not copy scratch research outputs, archives, or unrelated community references into the installable bundle.
